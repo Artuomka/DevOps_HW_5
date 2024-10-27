@@ -1,3 +1,12 @@
+terraform {
+  backend "s3" {
+    bucket         = "devops-hw-5"
+    key            = "./terraform.tfstate"
+    region         = "us-east-2"
+    dynamodb_table = "devops-hw-5-lock-table"
+  }
+}
+
 provider "aws" {
   region = "us-east-2"
 }
